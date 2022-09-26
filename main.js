@@ -9,7 +9,7 @@ let particleArray = [];
 const mouse = {
     x: null,
     y: null,
-    radius: 80
+    radius: 100
 }
 
 window.addEventListener('mousemove', function(event) {
@@ -50,7 +50,7 @@ function drawImage() {
             let forceDirectionX = dx / distance;
             let forceDirectionY = dy / distance; 
 
-            const maxDistance = 80;
+            const maxDistance = 200;
             let force = (maxDistance - distance) / maxDistance;
             if (force < 0) force = 0;
 
@@ -58,8 +58,8 @@ function drawImage() {
             let directionY = (forceDirectionY * force * this.density * 0.6);
 
             if (distance < mouse.radius + this.size) {
-                this.x -= directionX;
-                this.y -= directionY;
+                this.x += directionX;
+                this.y += directionY;
             } else {
                 if (this.x != this.baseX) {
                     let dx = this.x = this.baseX;
@@ -117,6 +117,7 @@ png.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAACvCAYAAACLko51AAA
 
 window.addEventListener('load', (event) => {
     ctx.drawImage(png, 100, 0);
+    
     drawImage();
 })
 
