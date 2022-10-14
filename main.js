@@ -58,8 +58,8 @@ function drawImage() {
             let directionY = (forceDirectionY * force * this.density * 0.6);
 
             if (distance < mouse.radius + this.size) {
-                this.x += directionX;
-                this.y += directionY;
+                this.x -= directionX;
+                this.y -= directionY;
             } else {
                 if (this.x != this.baseX) {
                     let dx = this.x = this.baseX;
