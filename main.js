@@ -9,7 +9,7 @@ let particleArray = [];
 const mouse = {
     x: null,
     y: null,
-    radius: 450
+    radius: 1000
 }
 
 window.addEventListener('mousemove', function(event) {
