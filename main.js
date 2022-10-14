@@ -80,7 +80,7 @@ function drawImage() {
         for (let y = 0, y2 = data.height; y < y2; y++ )  {
             for (let x = 0, x2 = data.width; x < x2; x++) {
                 if (data.data[(y * 4 * data.width) + (x * 4) + 3] > 128) {
-                    let positionX = x;
+                    let positionX = x - 15;
                     let positionY = y;
                     let color = "rgb(" + data.data[(y * 4 * data.width) + (x * 4)] + "," + data.data[(y * 4 * data.width) + (x * 4) + 1] + "," + data.data[(y * 4 * data.width) + (x * 4) + 2] + ")";
                     particleArray.push(new Particle(positionX * 3, positionY * 3, color));
